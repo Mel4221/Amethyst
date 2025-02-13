@@ -1,0 +1,25 @@
+Suggested Order for Syntax Explanation
+Basic Syntax (comments, whitespace, statements).
+
+Types (primitives, composites, special types).
+
+Variables and Constants.
+
+Control Flow (conditionals, loops, branching).
+
+Functions (declaration, invocation, lambdas, overloading).
+
+Objects (classes, encapsulation, inheritance, polymorphism).
+
+Memory Management (allocation, deallocation, references).
+
+Modules and Packages (imports, exports).
+
+Exception Handling (try-catch-throw).
+
+Concurrency (threads, task API).
+
+Standard Libraries (collections, I/O, serialization, utilities).
+
+Advanced Features (generics, user-defined types, pointers).
+

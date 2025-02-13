@@ -1,0 +1,11 @@
+Amethyst/
+├── docs/
+│   ├── syntax.md
+│   ├── semantics.md
+│   ├── features.md
+│   ├── roadmap.md
+│   └── CONTRIBUTING.md
+|   ├── examples/
+│   ├── hello_world.ame
+│   ├── loops.ame
+│   └── functions.ame

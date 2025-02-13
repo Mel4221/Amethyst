@@ -16,12 +16,12 @@ Amethyst
 │       └── while.ame
 ├── Concurrency
 │   ├── AAA: (Async and Await)
-│   │   ├── Futures.ame
-│   │   └── Promise.ame
+│   │   ├── DISABLED
+│   │   └── DISABLED
 │   └── Threads
 │       ├── Creation.ame
 │       ├── Pooling.ame
-│       └── Synchronization.ame
+│       └── Synchronization.ame                
 ├── EH: (Exceptions Handling)
 │   └── Exceptions
 │       ├── catch.ame
