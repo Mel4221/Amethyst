@@ -1,0 +1,23 @@
+
+class Intenger
+{
+
+    var int value = 0
+    pub function parse(input)
+    {
+        try{
+            if(#IS_VALID_INT(input))
+            {
+                value = Intenger(input)
+                return value
+            }
+        }catch{
+            throw Error("INT PARSE ERROR: {input}")
+        }
+    }
+    Intenger(any)
+    {
+        value = any
+        return value
+    }
+}

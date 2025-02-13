@@ -1,0 +1,152 @@
+programming_language/
+│
+├── types/
+│   ├── primitive/
+│   │   ├── numeric/
+│   │   │   ├── integer/
+│   │   │   │   ├── int
+│   │   │   │   ├──  
+│   │   │   │   ├── ***long***
+│   │   │   │   └── byte
+│   │   │   ├── floating_point/
+│   │   │   │   ├── float
+│   │   │   │   └── 
+│   │   │   └── ***boolean/***
+│   │   │       └── bool
+│   │   ├── character/
+│   │   │   └── char
+│   │   └── special/
+│   │       ├── null
+│   │       └──  
+│   ├── composite/
+│   │   ├── array
+│   │   ├── 
+│   │   ├── 
+│   │   └── 
+│   ├── user_defined/
+│   │   ├── class
+│   │   ├── interface
+│   │   └── 
+│   └── advanced/
+│       ├── generic
+│       ├── nullable
+│       ├── function_type
+│       └── pointer
+│
+├── objects/
+│   ├── properties/
+│   │   ├── fields
+│   │   ├── methods
+│   │   └── constructors
+│   ├── inheritance/
+│   │   ├── single
+│   │   ├── multiple
+│   │   └── interface
+│   ├── polymorphism/
+│   │   ├── overriding
+│   │   └── overloading
+│   └── encapsulation/
+│       ├── public
+│       ├── private
+│       ├── 
+│       └── 
+│
+├── functions/
+│   ├── declaration/
+│   │   ├── parameters/
+│   │   │   ├── positional
+│   │   │   ├── named
+│   │   │   ├── optional
+│   │   │   └── 
+│   │   ├── return_type
+│   │   └── body
+│   ├── invocation/
+│   │   ├── call
+│   │   ├──  
+│   │   └──*higher_order* ????
+│   ├── lambdas/
+│   │   ├── anonymous
+│   │   └── closures
+│   └── overloading/
+│       ├── by_parameters
+│       └── by_return_type
+│
+├── control_flow/
+│   ├── conditional/
+│   │   ├── if
+│   │   ├── else
+│   │   ├── switch
+│   │   └── ternary
+│   ├── loops/
+│   │   ├── for
+│   │   ├── while
+│   │   ├── 
+│   │   └── foreach
+│   └── branching/
+│       ├── break
+│       ├── continue
+│       ├── return
+│       └── goto
+│
+├── memory_management/
+│   ├── allocation/
+│   │   ├── stack
+│   │   └── heap
+│   ├── deallocation/
+│   │   ├── manual
+│   │   └── garbage_collection
+│   └── references/
+│       ├── pointer
+│       ├── 
+│       └── 
+│
+├── error_handling/
+│   ├── exceptions/
+│   │   ├── try
+│   │   ├── catch
+│   │   ├── 
+│   │   └── throw
+│   └── result_types/
+│       ├── 
+│       ├──  
+│       └──  
+│
+├── modules_and_packages/
+│   ├── imports/
+│   │   ├── relative
+│   │   └── absolute
+│   ├── exports/
+│   │   ├── public
+│   │   └── private
+│   └── namespaces/
+│       ├──  
+│       └──  
+│
+├── concurrency/
+│   ├── threads/
+│   │   ├── creation
+│   │   ├── synchronization
+│   │   └── pooling
+│   ├── async_await/
+│   │   ├── futures
+│   │   └── promises
+│   └── message_passing/
+│       ├──  
+│       └──  
+│
+└── standard_library/
+    ├── collections/
+    │   ├── list
+    │   ├── map
+    │   ├── set
+    │   └── queue
+    ├── utilities/
+    │   ├── math
+    │   ├── string
+    │   ├── datetime
+    │   └── random
+    └── io/
+        ├── file
+        ├── network
+        ├── console
+        └── serialization

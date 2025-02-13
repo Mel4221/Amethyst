@@ -1,0 +1,128 @@
+Amethyst
+├── CF: (Control Flow)
+│   ├── Branching
+│   │   ├── break.ame
+│   │   ├── continue.ame
+│   │   ├── goto.ame
+│   │   └── return.ame
+│   ├── Conditional
+│   │   ├── else.ame
+│   │   ├── if.ame
+│   │   ├── switch.ame
+│   │   └── ternary.ame
+│   └── Loops
+│       ├── for.ame
+│       ├── foreach.ame
+│       └── while.ame
+├── Concurrency
+│   ├── AAA: (Async and Await)
+│   │   ├── Futures.ame
+│   │   └── Promise.ame
+│   └── Threads
+│       ├── Creation.ame
+│       ├── Pooling.ame
+│       └── Synchronization.ame
+├── EH: (Exceptions Handling)
+│   └── Exceptions
+│       ├── catch.ame
+│       ├── throw.ame
+│       └── try.ame
+├── Functions
+│   ├── Declaration
+│   │   ├── Body.ame
+│   │   ├── Parameters
+│   │   │   ├── Named.ame
+│   │   │   ├── Optional.ame
+│   │   │   └── Positional.ame
+│   │   └── ReturnType.ame
+│   ├── Invocation
+│   │   ├── Call.ame
+│   │   └── Recursion.ame
+│   ├── Lambda
+│   │   ├── Anonymous.ame
+│   │   └── Closures.ame
+│   └── Overloading
+│       ├── ByParameters.ame
+│       └── ByReturnType.ame
+├── MAP: (Modules, Abstractions, and Packages)
+│   ├── Exports
+│   │   ├── Private.ame
+│   │   └── Public.ame
+│   └── Imports
+│       ├── Absolute.ame
+│       └── Relative.ame
+├── MM: (Memory Management)
+│   ├── Allocation
+│   │   ├── Heap.ame
+│   │   └── Stack.ame
+│   ├── Deallocation
+│   │   ├── GC.ame
+│   │   └── Manual.ame
+│   └── References
+│       └── Pointer.ame
+├── Objects
+│   ├── Encapsulation
+│   │   ├── Private.ame
+│   │   └── Public.ame
+│   ├── Inheritance
+│   │   ├── Interface.ame
+│   │   ├── Multiple.ame
+│   │   └── Single.ame
+│   ├── Polymorphism
+│   │   ├── Overloading.ame
+│   │   └── Overriding.ame
+│   └── Properties
+│       ├── Constructors.ame
+│       ├── Fields.ame
+│       └── Methods.ame
+├── SL: (Standard Libraries)
+│   ├── Collections
+│   │   ├── List.ame
+│   │   ├── Map.ame
+│   │   ├── Queue.ame
+│   │   └── Set.ame
+│   ├── IO
+│   │   ├── Console.ame
+│   │   ├── Directory.ame
+│   │   ├── File.ame
+│   │   ├── Network.ame
+│   │   └── Serialization
+│   │       ├── Html
+│   │       │   └── Html.ame
+│   │       ├── Json
+│   │       │   └── Json.ame
+│   │       ├── Toml
+│   │       │   └── Toml.ame
+│   │       └── Xml
+│   │           └── Xml.ame
+│   └── Utilities
+│       ├── DateTime.ame
+│       ├── Math.ame
+│       ├── Random.ame
+│       └── String.ame
+└── Types
+    ├── Advanced
+    │   ├── FunctionType.ame
+    │   ├── Generic.ame
+    │   ├── Nullable.ame
+    │   └── Pointer.ame
+    ├── Composite
+    │   └── Array.ame
+    ├── Primitives
+    │   ├── Boolean
+    │   │   └── Boolean.ame
+    │   ├── Character
+    │   │   └── Character.ame
+    │   ├── Numeric
+    │   │   ├── Floating
+    │   │   │   └── Float.ame
+    │   │   ├── Integer
+    │   │   │   ├── Byte.ame
+    │   │   │   └── Integer.ame
+    │   │   └── Long
+    |   |       ├── Long.ame
+    │   └── Special
+    │       └── Null.ame
+    └── UD: (User-Defined Types)
+        ├── Class.ame
+        └── Interface.ame

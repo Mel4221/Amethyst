@@ -1,0 +1,37 @@
+/*
+    Multy lines comments
+*/
+
+//  Single line comment
+
+
+
+/*
+    Assinging types and scoup modifiers 
+    
+    // set the variable and by default is private in it's scope
+    var variable_name = value
+
+    // make the variable visible out side of any scope
+    pub variable_name = value
+*/
+
+
+
+
+
+
+
+
+var single_byte = 255
+
+
+
+var a = 4
+
+var b = 6
+
+//  aritmetic expression 
+var c = a+b
+
+print(c)

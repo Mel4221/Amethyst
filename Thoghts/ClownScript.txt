@@ -1,0 +1,49 @@
+using backup
+using internet
+using zcrazy
+
+namespace program
+class system
+6(){
+	file = read(http://ffffff.com/file.txt)
+	if(file[0] == 962){
+		id = crazy_math(file)
+	}else{
+		return error("wrong version")
+	}
+}
+6()
+
+
+
+
+
+
+
+
+
+
+
+[keywords]
+var = assing
+set = assing
+const = assing & lock
+buffer = 
+array
+list
+deprecated thread
+async
+async_thread
+[functions]
+buffer buff = read file -e utf8 -l false
+
+thread mv = 
+
+
+
+write(file,encouding,lock)
+
+async f()
+{
+	sync file
+}

@@ -1,0 +1,34 @@
+types/
+├── primitive/
+│   ├── numeric/
+│   │   ├── integer/
+│   │   │   ├── int
+│   │   │   ├── short
+│   │   │   ├── long
+│   │   │   └── byte
+│   │   ├── floating_point/
+│   │   │   ├── float
+│   │   │   └── double
+│   │   └── decimal/  // High-precision decimal type
+│   │       └── decimal
+│   ├── boolean/
+│   │   └── bool
+│   ├── character/
+│   │   └── char
+│   └── special/
+│       ├── null
+│       └── void
+├── composite/
+│   ├── array
+│   ├── tuple
+│   ├── struct
+│   └── enum
+├── user_defined/
+│   ├── class
+│   ├── interface
+│   └── type_alias
+└── advanced/
+    ├── generic
+    ├── nullable
+    ├── function_type
+    └── pointer

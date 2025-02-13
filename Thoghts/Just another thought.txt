@@ -1,0 +1,65 @@
+include "io"
+include "xml"
+include "python" or 
+Network.Download("https://python.org/downlad/latest/{#OS_TYPE}")
+
+include #CSHARP_LATEST_RUNTIME or Network.Download(#CSHARP_LATEST_RUNTIME)
+
+let py = Python("print("working...")",false); // wait for exit
+
+let cs = Dotnet()
+
+cs.Using.Add(
+"{#IMPORT_DLL_REQUIRED}"
+"System",
+"System.IO",
+);
+
+cs.Code("
+	Console.WriteLine("Hello World!!!!");
+	Console.WriteLine(File.ReadAllText("file.txt"));
+",false);
+
+print(cs.Run()) // exit code 
+
+let exit = py.run()
+if(exit != 0)
+{
+	/*
+		This will fail not because py
+		does not have an error property
+		implemented but because they set
+		the same name as the gost variable
+		which should not have the same name
+		as the scopu
+	*/
+	let error = py.error 
+	throw Error("There was an error {error}") // GOST VARIABLE error 
+}
+
+let json = Json(
+"{
+	id:2902,
+	user:"melvin",
+	email:"mel@cool.com",
+}",Json.Formating.Default)
+
+
+set file = File("file.txt")
+file.Read()
+
+set content = file.text
+
+print(content)
+
+pub f = s
+
+
+/*
+	IL interpretestions of the above code , not completed yet 
+*/
+
+get_module="io";
+set_global_variable=[file,"What else"]
+set_global_variable=content;
+reset_global_variable=[content,239i02093]
