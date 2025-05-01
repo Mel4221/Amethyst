@@ -1,0 +1,32 @@
+/Amethyst/
+├── /docs/                     # Documentation
+│   ├── design_notes.md        # High-level design decisions
+│   ├── grammar_spec.md        # Formal grammar specification
+│   ├── vm_spec.md            # Virtual machine design
+│   └── roadmap.md            # Development roadmap
+│
+├── /src/                      # Source code
+│   ├── /lexer/               # Lexical analyzer (tokenizer)
+│   ├── /parser/              # Parser (syntax analysis)
+│   ├── /ast/                 # Abstract Syntax Tree (AST)
+│   ├── /semantic_analyzer/   # Type checking and semantic analysis
+│   ├── /intermediate_lang/   # Intermediate Language (IL)
+│   ├── /vm/                  # Virtual Machine (VM)
+│   ├── /stdlib/              # Standard library (I/O, generics, etc.)
+│   └── /compiler/            # Compiler (IL to VM bytecode)
+│
+├── /tests/                   # Test cases
+│   ├── /lexer_tests/         # Tests for the lexer
+│   ├── /parser_tests/        # Tests for the parser
+│   ├── /semantic_tests/      # Tests for semantic analysis
+│   ├── /vm_tests/            # Tests for the VM
+│   └── /integration_tests/   # End-to-end tests
+│
+├── /examples/                # Example scripts in your language
+│   ├── hello_world.my_lang
+│   ├── generics_example.my_lang
+│   └── threading_example.my_lang
+│
+└── /tools/                   # Helper tools
+    ├── /debugger/           # Debugger for your VM
+    └── /repl/               # Read-Eval-Print Loop (REPL)

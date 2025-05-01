@@ -1,0 +1,79 @@
+/*
+    This languague is ment to be an scripting languague which will be 
+    interpreted , and will run without a Gargbage Collector and to do
+    so i need to define how in the heck stuff will be delocated.
+*/
+
+let x = f() // this function returns some random value 
+
+if(x == "some random value")
+{
+    print(x) // some random value 
+}
+
+/*
+    Option_1: 
+
+    This could sort of work for smaller programs , meaning it could
+    just free the object or everything at the end of the code that 
+    is given , but that would be problematic because it would mean 
+    that the whole file will have to be in memory which is not optimal
+*/
+{
+
+    free(x) // this should free what ever memroy x has
+}
+
+/*
+    Option_2: 
+
+    A simple way of keeping in track of what is going to be used
+    in a languague since you just need to get ried of stuff that 
+    is not being referenced by the main method for example.
+*/
+var data = [2,34,3,3,2,333]
+
+const int main()
+{
+    try{
+        for(d in data)
+        {
+            print(d)
+        }
+        print("working...")
+        return 0
+    }catch{
+        print(error)
+        return 1
+    }
+}
+
+{
+    // data being freed here 
+    free(data)
+}
+
+/*
+    Option_3: 
+
+
+*/
+
+
+
+/*
+    This is just a random idea of how it would look like on the 
+    intermidiate languague 
+*/
+var t = array.int([1,2,3,4,5,6,7,8,9,0])
+
+
+
+INT_LITERAL_ARRAY_TOKEN = t
+INT_LITERAL_ARRAY_VALUE = [1,2,3,4,5,6,7,8,9,0]
+INT_LITERAL_ARRAY_LENGTH = 10
+
+
+ASSING_VARIABLE(t,INT_LITERAL_ARRAY)
+
+

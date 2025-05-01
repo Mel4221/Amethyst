@@ -1,0 +1,85 @@
+Program        = { Statement | ClassDefinition | FunctionDefinition } ;
+
+Statement      = VariableDeclaration | Assignment | Expression | ControlFlow | ReturnStatement | ConstDeclaration ;
+
+Block          = "{" { Statement } "}" ;
+
+VariableDeclaration = "var" Identifier [ "=" Expression ] ;
+
+ConstDeclaration     = "const" Identifier [ "=" Expression ] ;
+
+Assignment         = Identifier "=" Expression ;
+
+Type               = "int" | "float" | "bool" | "char" | "byte" | "long" | "string" | "null" | Identifier | GenericType ;
+
+GenericType        = Identifier "<" Type ">" ;
+
+Expression         = Literal | Identifier | BinaryExpression | FunctionCall | ObjectCreation ;
+
+Literal            = Number | StringLiteral | BooleanLiteral | "null" ;
+
+Number             = Digit { Digit } ;
+
+StringLiteral      = '"' { Character } '"' ;
+
+BooleanLiteral     = "true" | "false" ;
+
+Identifier         = Letter { Letter | Digit | "_" } ;
+
+ClassDefinition    = "class" Identifier [ ":" Identifier { "," Identifier } ] Block ;
+
+ObjectCreation     = "new" Identifier "(" [ ArgumentList ] ")" ;
+
+PropertyAccess     = Identifier "." Identifier ;
+
+MethodCall         = Identifier "." Identifier "(" [ ArgumentList ] ")" ;
+
+ArgumentList       = Expression { "," Expression } ;
+
+FunctionDefinition = "function" | "func" | "set" | "const" [ Type ] Identifier "(" [ ParameterList ] ")" Block ;
+
+ParameterList      = Parameter { "," Parameter } ;
+
+Parameter          = Identifier [ ":" Type ] ;
+
+FunctionCall       = Identifier "(" [ ArgumentList ] ")" ;
+
+ReturnStatement    = "return" [ Expression ] ;
+
+ControlFlow        = IfStatement | Loop | ForLoop | ForeachLoop ;
+
+IfStatement        = "if" "(" Expression ")" Block [ "else" Block ] ;
+
+Loop               = "loop" Block ;
+
+ForLoop            = "for" "(" Identifier "=" Expression ";" Expression ";" Expression ")" Block ;
+
+ForeachLoop        = "foreach" "(" Identifier "in" Expression ")" Block ;
+
+DestructorDefinition = "destructor" "(" ")" Block ;
+
+FreeStatement       = "free" "(" Expression ")" ;
+
+ReferenceAssignment = Identifier "=" PropertyAccess ;
+
+CopyOnWrite         = Identifier "=" Expression ;
+
+BinaryExpression   = Expression Operator Expression ;
+
+Operator           = "+" | "-" | "*" | "/" | "^" | "%" | "==" | "!=" | "<" | ">" | "<=" | ">=" | "&&" | "||" ;
+
+ImportStatement = "import" ( WildcardImport | SpecificImport | RenamedImport ) ;
+
+WildcardImport  = "*" "from" ModulePath ;
+
+SpecificImport  = ImportPath "from" ModulePath ;
+
+RenamedImport   = ImportPath "as" Identifier ;
+
+ImportPath      = Identifier { "/" Identifier } ;
+
+ModulePath      = StringLiteral ;
+
+IncludeStatement = "include" IncludePath ;
+
+IncludePath      = StringLiteral ;

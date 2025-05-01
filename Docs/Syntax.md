@@ -1,293 +1,326 @@
 
 
-Comments: 
 
-Like in many programing languagues coming from C comments are handled with either a multy line or single line 
+# Amethyst Programming Language Syntax Guide
 
-//single line comment
-/*
-    Multiple lines comments 
-    to give extra information
-    about a function 
-    that returns  2 + 2
-*/
+## Comments
+Comments in Amethyst are similar to those in C-style languages. You can use single-line or multi-line comments.
 
-Identation: 
-
-By default the only rule is that each command must be terminated
-by a single line which means that an stetemnt needs to finish with
-an enter or next line character meaning
-
-var x = 2 
-
-Statement and expression 
-
-
-Statements: 
-By default types could be set literally or could just be assing with
-their value for example 
-
-var t = 22
-var t = int(22) // literal type enforcement activated
-
-t = 6 // valid and no exeption
-t = 2.4 // will throw an error 
-
-All primitive types: 
-
-var single_byte = byte(255) // signed
-
-var is_fun_to_prgram = bool(true)
-
-var cool_number = int(2) // singned
-
-var pi = float(3.14159) // hight presition signed 
-
-var big_file_size = long(-293023940) // support ungsined values 
-
-var single_letter = char("t") or char('t') // both allowed 
-
+```amethyst
+// Single-line comment
 
 /*
-    It's important to clarify that if a return type for
-    a function is not defined the function default return
-    is null which is the default for void functions instead
-    of having the void keyward we have the null instead 
+    Multi-line comment
+    Useful for detailed explanations
 */
-var undefined_value = null() or null // both valid 
+```
 
+---
 
-its goo to point out that some expressions could be written like: 
+## Indentation
+Each command must be terminated by a newline character (`\n`). Statements must end with a newline.
 
+```amethyst
+var x = 2\n
+```
+
+---
+
+## Statements and Expressions
+
+### Variable Declaration
+Variables can be declared with or without explicit type enforcement.
+
+```amethyst
+var t = 22                // Implicit type
+var t = int(22)           // Explicit type enforcement
+t = 6                     // Valid
+t = 2.4                   // Error: Type mismatch
+```
+
+### Primitive Types
+Primitive types can be declared using the `var` keyword.
+
+```amethyst
+var single_byte = byte(255)          // Signed byte
+var is_fun_to_program = bool(true)   // Boolean
+var cool_number = int(2)             // Signed integer
+var pi = float(3.14159)              // High-precision signed float
+var big_file_size = long(-293023940) // Supports unsigned values
+var single_letter = char("t")        // Character (both "t" and 't' are allowed)
+```
+
+### Explicit Type Declaration
+Variables can also be declared with explicit types.
+
+```amethyst
+int t = 7
+float pi = 3.14159
+array colors = {"red", "green", "blue"}
+```
+
+### Null Values
+If a function has no return type, it defaults to `null`.
+
+```amethyst
+var undefined_value = null()  // Both are valid
+var undefined_value = null
+```
+
+### Expressions
+Expressions can be written in a straightforward manner.
+
+```amethyst
 var x = 7
+var t = (2 * 4) / 7
+var x = ((2 * 1) ^ (2 / 2) - (1 + 2))  // Any simple mathematical operation
+```
 
-var t = (2 * 4) / 7  
+---
 
-var x = ((2*1) ^ (2/2) - (1+2)) // any simple matematical operation 
+## Special Types
 
+### Classes
+Everything in Amethyst is an object, including classes and arrays. Classes support OOP features like inheritance and encapsulation.
 
-Special types: 
+```amethyst
+class Vehicle {
+    pub color = Color.rgb(0, 0, 0)
+    pub wheels = int(4)
+    pub type = string("")
+    pri model_number = 384972348
 
-class: 
-        By default everything is an object in this languague
-        which means that even the class and arrays are just 
-        objects by default but the class keyword allows the 
-        creation of objects as well and support some of the 
-        functionalities of OOP such as inerance from a single
-        class and multiple as well. 
-
-        
-        class Vehicle
-        {
-            pub color = Color.rgb(0,0.0) 
-            pub wheels = int(4) 
-            pub type = string("") 
-            pri model_number = 384972348
-
-            pub function print_model_number()
-            {   
-                print(model_number)
-            } 
-            Vehichle()
-            {
-
-            }
-        }
-
-        Car : Vehicle,ANY_OTHER_THAT_WE_WANT_TO EINERATE{
-            type = "Sport Car"
-        } 
-
-        var car = Car() 
-        car.color = Color.rgb(22,44,68)
-
-
-
-        /*
-            so here we can view all the keywords that can be used in a class: 
-            pub: declare a public property | method
-            pri: declare a private property | method
-
-            By default this is a good example how syntactically it could allow, Contructor , also how we could acces their property and modify them 
-
-        */
-array:
-
-        /*
-            as long as all the values are the same
-            the type enforcement will be set 
-            other wise no types enforcement
-        */
-        GOD I ALMOST FORGET ALL ARRAYS START AT 0 
-
-        // so the syntax goes like this
-        var | pub | pri VARIABLE_NAME = TYPE_OPTIONAL[ITEMS]
-
-        
-        var colors = ["red","green","blue"] // literal string array
-
-        var numbers = int[2,3,4,5] // literal int array
-
-        var data = [233,"some value",255,Color] // allows multiple types
-
-        Methods available with arrays by default are: 
-        add(item)
-        remove(at)
-        find(item)
-        suport indexing with the squere brakets 
-        ... // not all are completed YET 
-
-    The List type will be added in the Standard Library as well as the 
-    Generics which will work similar to any other languague which is 
-    List<T> but currently not implemented YET. 
-
-    String: 
-        by default string is just an array of characters with some extra
-        methods for string manipulation so currently i will not list 
-        all the methods available , but the currently stablich will be
-
-        sub(,,,) // will have 3 types to have an standard behavior
-        last(,,,) // will have 3 types to have an standard behavior
-        index(string)
-
-
-
-Variables: 
-
-    as seen before variables are set with the var keyward , and constant even thought is still not implemented wil be with the const keyward 
-            
-
-Control Flow: 
-
-    There will be 3 types of loops: 
-    // just a regular foreach 
-    foreach(item in array)
-        {
-            print(item)
-        }
-    // i can't have declaration 
-    // since is added auto matically
-    for(i = start condition INCREMENT || DECREMENT i)
-    {
-
-    }
-    for(i = 0 i<array.length i++)
-    {
-        print(array[i]) 
-    }
-    loop
-    {
-        //infinete loop requires the break or return
-        //to exit from this  
+    pub function print_model_number() {
+        print(model_number)
     }
 
-by default as control we could use the conditions suported if , i don't think i may implemtn switch nor else nor else if sadly , but there is
-the posivility i may add a match function eventually 
-
-/*
-EXPERIMENTAL AND NOT YET EVEN CONSIDER SINCE
-WE MAY INSTEAD JUST GO FOR A FULL SWITCH
-INSTEAD OF REINVENT THE WHEEL
-*/
-match(type) 
-{
-    ""{
-
-    },
-    ""{
-
+    Vehicle() {
+        // Constructor
     }
 }
 
-
-
-var i = 0 
-loop
-{
-    if(i == 2000) 
-    {
-        break // we could use return as well here 
-    }
+class Car : Vehicle, ANY_OTHER_THAT_WE_WANT_TO_INHERIT {
+    type = "Sport Car"
 }
- 
 
+var car = Car()
+car.color = Color.rgb(22, 44, 68)
+```
 
-Functions (declaration, invocation, lambdas, overloading).
+#### Class Keywords
+- `pub`: Declares a public property or method.
+- `pri`: Declares a private property or method.
 
+---
 
-A function is declared with the keyward function and if is 
-inside a class the pri and pub to make it private or public
-and to invok them we only need function name and its paramter
-some may have optional parameters that will be declared with 
-the ? type to indicate that is not mandatory and if the parameter
-has a type it must receive the type it requires , on the case of 
-lambdas would work as annoimus functions and overloading will be 
-suported
+### Arrays
+Arrays in Amethyst are zero-indexed and support type enforcement if all elements are of the same type during compilation.
 
-// function declaration 
+```amethyst
+var colors = ["red", "green", "blue"]  // Literal string array
+var numbers = int[2, 3, 4, 5]          // Literal int array
+var data = [233, "some value", 255, Color]  // Mixed types allowed
+```
 
-function Hello() 
-{
+#### Array Methods
+- `add(item)`
+- `remove(at)`
+- `find(item)`
+- Supports indexing with square brackets `[]`
+
+---
+
+### Strings
+Strings are essentially arrays of characters with additional methods for manipulation.
+
+#### String Methods
+- `sub(,,,)`
+- `last(,,,)`
+- `index(string)`
+
+---
+
+## Variables
+Variables are declared using the explicit type or the  var` keyword. Constants (not yet implemented) will use the `const` keyword.
+
+---
+
+## Control Flow
+
+### Loops
+Amethyst supports three types of loops:
+
+#### `foreach` Loop
+```amethyst
+foreach(item in array) {
+    print(item)
+}
+```
+
+#### `for` Loop
+```amethyst
+for(i = 0 i < array.length i++) {
+    print(array[i])
+}
+```
+
+#### `loop` (Infinite Loop)
+```amethyst
+loop {
+    // Infinite loop; requires `break` or `return` to exit
+}
+```
+
+### Conditional Statements
+Amethyst supports `if` statements. `else`, `else if`, and `switch` are not yet implemented but may be added in the future.
+
+```amethyst
+var i = 0
+loop {
+    if(i == 2000) {
+        break  // Exit the loop
+    }
+    i++
+}
+```
+
+---
+
+## Functions
+
+### Function Declaration
+Functions are declared using the `function` keyword. If no return type is specified, the function defaults to returning `null`.
+
+```amethyst
+function Hello() {
     print("Hello World!!!")
 }
 
-// just a regular invocation
-Hello() //should print: Hello World!!!
+function int Value() {
+    return 2
+}
+```
 
-/*
-    Something important to point out is that 
-    even thoguht it does not have a return
-    type it will return null by default 
-    or any type that is not defined 
-*/
+### Function Overloading
+Overloading is supported, but functions with the same number of arguments and types are not allowed.
 
-//function with a return type 
-
-/*
-    so it works just like before but
-    now we just add the return type
-    before the function name , also
-    multiple function with different
-    parameters are allowed but not
-    from the same arguments
-*/
-function int Value() // valid 
-{
-    return 2 
+```amethyst
+function int Sum(a, b) {
+    return a + b
 }
 
-/*
-First functions RULE functions with parameters can't 
-have 2 overload that have the same arguments length
-and one of them being type ANY 
-for example this would not be allowed
+function int Sum(a, int b) {
+    return a + b
+}
+```
 
-function t(x,y) {}
-function y(int x , int y) {} // this MUST fail during lexical analizer
-*/
+### Lambda Functions
+Lambda functions are anonymous and can be assigned to variables.
 
- 
-// with arguments no arguments types defined 
-function int Sum(a,b) // any 
-{
-    return a+b
+```amethyst
+var t = () {
+    print("working")
+    return true
 }
 
-print(Sum(2,2)) // should print 4 
+var t = int() {
+    return 2 + 2
+}
+```
 
+---
 
-/*
-    this is similar but in fact 
-*/
-function int Sum(a,int b) 
-{
-    return a+b
+## Objects
+
+### Class-based Objects
+Objects can be created using classes, supporting encapsulation, inheritance, and polymorphism.
+
+```amethyst
+class Vehicle {
+    pub color = Color.rgb(0, 0, 0)
+    Vehicle() {
+        // Constructor
+    }
+}
+```
+
+### Functional Objects
+Objects can also be created using a functional approach.
+
+```amethyst
+var car = {
+    color: Color.rgb(22, 44, 68)
 }
 
+car.drive = function() {
+    print("Driving...")
+}
+```
 
- 
-print(Sum(2,2)) // should print 4 
+---
 
+## Memory Management
+Memory must be manually deallocated using the `free` keyword.
 
+```amethyst
+free(ANY_TYPE)
+```
 
+---
 
+## Modules and Packages
+Modules can be imported using `import` or `include`.
+
+```amethyst
+import calculator from projects
+include "../../F.ame"
+```
+
+---
+
+## Exception Handling
+Exception handling is not yet implemented but will follow a `try-catch` model.
+
+```amethyst
+try {
+    // Code that may fail
+} catch {
+    print(_)  // Ghost variable to catch the error
+    throw || return || break
+}
+```
+
+---
+
+## Concurrency
+Concurrency is supported through threads and tasks.
+
+```amethyst
+const long_operation = thread(() {
+    // Long operation
+})
+long_operation.start()
+
+Task.run(() {
+    // Background operation
+})
+```
+
+---
+
+## Standard Libraries
+Standard libraries for collections, I/O, serialization, and utilities are planned but not yet implemented.
+
+---
+
+## Advanced Features
+
+### Generics
+Generics will be added in future versions.
+
+### Pointers
+Pointers and foreign function interfaces (FFI) are planned but not yet implemented.
+
+---
+
+This is the complete `syntax.md` file, consolidated into a single document for easy reference. Let me know if you need further adjustments!

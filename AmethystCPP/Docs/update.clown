@@ -1,0 +1,206 @@
+include "scripts"
+include "https://raw.githubusercontent.com/Mel4221/ClownScript/refs/heads/main/Docs/print2.clown"
+include "notes.txt"
+
+//include "notes.txt" as @note
+
+
+
+namespace "updater"
+
+string text = "some text right there"
+# and this is a compiler comments
+// this is a single line comment
+/*
+    this is a multy line comment 
+*/
+
+/*
+There are 2 styles that i have in mind 
+one that looks more like a functional language
+and the other one more similar to bash
+*/
+
+@person.user_name = "mel"
+@person.user_email = "mel@gmail.com" 
+
+$update_out = $"{shell_temp/update.clown}" 
+# compiler pragma will be added with the pound simbol 
+// Sytle 1
+update ->
+    wget "http://www.github.com/user/updates.clown" -o $update_out
+return void 
+
+try update -> catch @error -> print $"{@error.message
+there has been an error while trying to process the update
+please try to check your internet connection or the server}"
+
+try update() ->
+catch @error -> 
+    print $"{@error.message
+    there has been an error while trying to process the update
+please try to check your internet connection or the server
+    }"
+    return @error
+
+
+int sum -> int a,int b
+    int x = a + b
+return x
+
+string input = "12345"
+int number = input.to_int
+
+@animal
+[
+    name = ""
+    lastName = ""
+    int age = 0
+    speak -> 
+        print "animal makes a sound"
+    return void
+
+    @animal -> void
+]
+
+@dog -> @animal
+[
+    bark -> 
+        speak
+        print "Dog Barcking"
+        return void
+
+    @dog -> void
+        
+]
+
+print sum 2 4
+
+async update_sys ->
+
+    $update = $"{$temp/update/sys.update}"
+
+    @result = wget "http://www.github.com/user/updates.clown" -o $"{shell_temp/update.clown}"
+
+    
+    if @result.number == 1 -> @error
+    
+    @result = shell update -f $update
+
+    if @result.number == 1 -> return @error
+    
+    @result = shell self_check
+
+    if  @result.number == 0 &&
+        @result.errors == 0 -> 
+        clear_temp $update
+        end        
+
+    if  @result.number == 0 && 
+        @result.errors == 0 -> 
+        clear_temp $update
+        end
+
+return void
+# either return has to be empty or simply a type   
+
+
+await(update_sys)
+
+sum -> @list
+    var total
+    foreach item in @list ->
+        total += item
+return total
+
+clear_temp path -> rm -r $path
+
+
+print sum [1,1,1,1,1,1,1,1,1,1]
+
+
+@car
+[
+    model = " "
+    int made = 0
+    id = " "
+    @car -> 
+    # constructor
+    int length = 16
+    id = random_chars length
+]
+
+@parcking_lot<type>
+[
+   type @cars = []
+   
+
+   @parcking_lot ->
+    # constructor
+]
+ 
+
+@parcking_lot<@car> = []
+
+
+@fruits = ["Orange","Blueberry","Apple","Banana"]
+
+print @fruits.length
+
+@fruits.add "Pinapple"
+
+print @fruits.length
+
+@fruits.clear
+
+
+/*
+    to me this will be 
+    one of the greatest 
+    feature for the language: 
+    pointer manipulation.
+*/
+
+@car* = [] 
+public @house 
+[
+    @garage = [] 
+    @add -> @car
+        @garage.add(@car*)
+        return     
+]
+
+@house.add @car
+
+@action -> print "i am an action"
+
+@action2 -> param
+    print $"{i am action 2 , with $param}"
+    return
+
+
+run_actions -> @action,@action2,param
+    @action.run()
+    @action2.run(param)
+    return
+
+run_actions(@action,@action2,@action2)
+
+public main -> @args
+    if @args[0] == "update"
+        update()
+
+// this is a single line comment
+
+/*
+    this is a multy line comment 
+*/
+
+/*
+There are 2 styles that i have in mind 
+one that looks more like a functional language
+and the other one more similar to bash
+*/
+
+
+//d t f k like

@@ -1,0 +1,74 @@
+include "package.extention"
+import package from "path"
+import package from "path" as something
+import * from "path or package"
+
+/*
+	multy lines comments
+*/
+
+// single line comments 
+
+//type keyword = value\n
+
+
+var any_value = null
+
+int intenger_value = 3
+float signed = 3.14159
+long unsigned_value = -920183210938
+byte single_byte = 255
+char character = 'c'
+bool bolean_value = true // or false 
+string text = "Some random text" 
+string some_text = #"some int value: {intenger_value}"
+var dinamic_array = ["value"] // dinamic literal string array 
+array t = [1,2,2] // literal int array
+
+const f()
+{
+
+}
+set f()
+{
+
+}
+function f()
+{
+	
+}
+func f()
+{
+	
+}
+var f = ()
+{
+	
+}
+
+class Color
+{
+	pub var R = null
+	pub byte G = null
+	pub int B = null
+	pub func Value() 
+	{
+		return [R,G,B]
+	}
+	Color()
+	{
+		 R = 0
+		 G = 0
+		 B = 0
+	}
+	Color(r,g,b)
+	{
+		R=r
+		G=g
+		B=b
+	}
+}
+
+#macro("Some macro function") 
+
+

@@ -1,0 +1,83 @@
+Program        = { Statement | ClassDefinition }
+
+Statement      = VariableDeclaration | Assignment | Expression | ControlFlow | ReturnStatement | ConstDeclaration
+
+Block          = "{" { Statement } "}"
+
+VariableDeclaration = "var" Identifier [ "=" Expression ]
+
+ConstDeclaration     = "const" Identifier [ "=" Expression ]
+
+Assignment         = Identifier "=" Expression
+
+Type               = "int" | "float" | "bool" | "char" | "byte" | "long" | "string" | "null" | Identifier | GenericType
+
+GenericType        = Identifier "<" Type ">"
+
+Expression         = Literal | Identifier | BinaryExpression | FunctionCall | ObjectCreation | AnonymousFunction
+
+Literal            = Number | StringLiteral | CharLiteral | BooleanLiteral | "null"
+
+Number             = Digit { Digit }
+
+StringLiteral      = '"' { Character } '"'
+
+CharLiteral        = "'" { Character } "'"
+
+BooleanLiteral     = "true" | "false"
+
+Identifier         = Letter { Letter | Digit | "_" }
+
+ClassDefinition    = "class" Identifier [ "<" TypeParameter ">" ] "{" { FieldDefinition | MethodDefinition } "}"
+
+TypeParameter      = Identifier
+
+FieldDefinition    = VisibilityModifier? ("var" | "const") Identifier [ "=" Expression ]
+
+VisibilityModifier = "pub" | "pri"
+
+MethodDefinition   = VisibilityModifier? FunctionDeclarator Type "(" [ ParameterList ] ")" Block
+
+FunctionDeclarator = "func" | "function" | "set"
+
+ParameterList      = Parameter { "," Parameter }
+
+Parameter          = Identifier [ ":" Type ]
+
+FunctionCall       = Identifier "(" [ ArgumentList ] ")"
+
+ObjectCreation     = Identifier "(" [ ArgumentList ] ")"
+
+ArgumentList       = Expression { "," Expression }
+
+ReturnStatement    = "return" [ Expression ]
+
+ControlFlow        = IfStatement | Loop | ForeachLoop
+
+IfStatement        = "if" "(" Expression ")" Block [ "else" Block ]
+
+Loop               = "loop" Block
+
+ForeachLoop        = "foreach" "(" Identifier "in" Expression ")" Block
+
+BinaryExpression   = Expression Operator Expression
+
+Operator           = "+" | "-" | "*" | "/" | "^" | "%" | "==" | "!=" | "<" | ">" | "<=" | ">=" | "&&" | "||"
+
+ImportStatement    = "import" ( WildcardImport | SpecificImport | RenamedImport )
+
+WildcardImport     = "*" "from" ModulePath
+
+SpecificImport     = ImportPath "from" ModulePath
+
+RenamedImport      = ImportPath "as" Identifier
+
+ImportPath         = Identifier { "/" Identifier }
+
+ModulePath         = StringLiteral
+
+IncludeStatement   = "include" IncludePath
+
+IncludePath        = StringLiteral
+
+AnonymousFunction  = Type "(" [ ParameterList ] ")" Block

@@ -1,0 +1,44 @@
+
+Let's start with the basics , data should be use to alcoate 
+the type of data , the data could grow in size , so by defaul
+we could just set the at its core that the data size could grow
+to the size determined by the maximum size of the type for example
+
+in its core data type will be store in a similar type 
+by the VM so that being said 
+
+/*
+    No matter what text will be the size of the maximum 
+    size of the size of string which means that it is fine
+    for the vm to handle the expation of the current 
+    data , which means that it will not be problematic.
+    now the problem is when we have to delocate that data
+    though.
+*/
+string text = "some random text" 
+
+
+/*
+    To understand the problem , let's talk about the current
+    idea on how auto dilocation would be like based on my
+    first idea that when it get's out of scope the data will
+    be deleted lets thing a loop that don't exit for a minute
+    while it process some data in it loop 
+*/
+
+foreach(item_in_array in array)
+{
+    var variable_inside_loop = item_in_array 
+}
+
+/*
+    All depends on how the allocation acourse , in this case
+    if we take it as variable_inside_loop is referencing
+    the value inside of array it should be fine to understand
+    that variable_inside_loop is just taking a reference to 
+    item_in_array spesific value , we could operate on it 
+    and it is fine in the sences that in that case we sort of
+    fine on the reards that no memory allocation extra is taken
+    and inside this loop we don't care about delocating array yet
+*/
+
