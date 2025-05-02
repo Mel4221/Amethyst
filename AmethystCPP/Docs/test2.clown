@@ -56,6 +56,7 @@ int number = input.to_int
     name = ""
     lastName = ""
     int age = 0
+
     speak -> 
         print "animal makes a sound"
     return void
@@ -176,7 +177,7 @@ public @house
 
 @action2 -> param
     print $"{i am action 2 , with $param}"
-    return
+return
 
 
 run_actions -> @action,@action2,param
@@ -204,3 +205,46 @@ and the other one more similar to bash
 
 
 //d t f k like
+
+
+pub int sum -> int a , int b
+x = a + b
+return x
+
+result = sum 2 , 4
+print result
+
+list = [1,2,3,4,5]
+
+for(item in list)  
+    print item
+end
+
+i = 0
+while(i < x)
+    print list[i] 
+end
+
+loop
+
+end
+
+
+int f -> a , b
+
+return a+b
+
+
+f(2,4)
+
+
+object thing = 
+{
+    pub void print -> any
+        print("working...")
+    return
+}
+thing.propertyA = string() 
+thing.propertyB = int() 
+thing.propertyC = bool()
+
