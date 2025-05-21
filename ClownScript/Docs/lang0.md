@@ -23,12 +23,30 @@ This is an attempt to create a programming language that puts into practice a va
 
 - x = 2
 
-> But is important to define the primitive types first before 
+> But is important to define the primitive types first before for example 
+- int x = 2 
+- x = int() or int(INITIAL_VALUE)
 
-There are 2 ways to define a variable either by its concrete type using the type or simply by defining the type with its own value. 
+> there are 4 ways to declare a variable for example 
+    > is important to point out that there are 2 keywords that could be use to declare variables as well 
+- var
+- const
 
+> Ways to declare a variable 
+
+- TYPE VARIABLE_NAME = VALUE
+- VARIABLE_NAME = VALUE
+- VARIABLE_NAME = EXPLICIT_TYPE
+- KEYWORD VARIABLE_NAME = VALUE
+
+> Example: 
+
+- int x = 2
 - x = 2
-- x = int(2)
+- x = int(2) 
+- var x = 2
+- const x = 2
+
 
 Now that we know that lets go into the types 
 #### Types
@@ -40,8 +58,8 @@ Now that we know that lets go into the types
 - single_byte = byte(2)
 - number = 2
 - number = int(2)
-- char = 'c'
-- char = char('c')
+- character = 'c'
+- character = char('c')
 - text = "some text"
 - text = string("some text")
 - long_value = -23332322932
@@ -133,7 +151,7 @@ class animal{
 		print("wuaff")
 	return
 }
-class dog->animal 
+class dog->animal
 {
 	dog -> 
 		// this is the conscructor
@@ -146,7 +164,9 @@ dog.bark()
 > Now in the case that it wanted to be done in a mor imperative way it could be done as well 
 
 
-object animal = {} 
+class animal = {} 
+> not that we could also use the object keyword for this as well
+> object animal = {} 
 animal.bark -> 
 		print("wuaff")
 return void
@@ -171,7 +191,9 @@ end
 - || = or
 - !x = not
 
-> not xor operator YET 
+> xor operator not yet suported
+> ternary operator not yet suported
+> switch stetments not yet suported
 
 
 Still mssing...: 

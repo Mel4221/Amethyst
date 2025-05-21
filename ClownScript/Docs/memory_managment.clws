@@ -1,0 +1,56 @@
+// General Memory Managment Test
+
+
+/*
+    Global Variable Delocation Problem:
+
+    The thing is that when are we suposed to delocate such a Variable
+    since is a global variable in the scoup of the file when are we suposed to
+    know that is not longer in use
+
+    1. A work around could be an automatic check that is attached to its value which could check
+    every x time to verify if the global variable is not longer in use 
+
+    2. This is more theoretical since it is even farther from being an easy go around
+    since it will inpply to only free the global variable onces there is no reference
+    to that file which could make it a bit more memory hungry since it will force
+    that all the global variable of a file even if they are public or not to be loaded
+    to memory then any function that relate to it could work with it  
+
+*/
+
+> pub var text = string("some randome string...")
+
+import text from "some_file.clws" 
+
+print(text)
+
+
+/*
+    Function Internal Variables Delocation:
+
+    One of the simplest idea that i was thinking about how to delocate functions
+    is to simply delocate everything at the end of the variable and in the case 
+    of a function that returns something well just return the reference to where
+    that value is alocated which will simplify how it operates.
+*/
+
+int sum -> int a , int b
+    return a+b
+
+/*
+    So during the pre compiling phase of this code above 
+    it would be required to add some extra code to allow it to be able
+    to be delocated properly so in order to pre compile this it will turn 
+    intto the code below 
+*/
+
+int sum -> int a,int b
+    int random_temporal_internal_variable = a + b
+return random_temporal_internal_variable
+
+/*
+    So far so good now we have an unique variable that has received the value
+    of the previus operation so any value will be passed by reference so that
+    way we hold the same values
+*/

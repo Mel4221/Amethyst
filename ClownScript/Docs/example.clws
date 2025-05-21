@@ -1,0 +1,12 @@
+/*
+    Imports 
+*/
+include "../math/math.clws"
+import sum from "../math/sum.clws"
+import {add,subtract,devide} from "../math/math.clws"
+
+
+/*
+    Global Variable Declarations
+*/
+var user_name = "melvin";

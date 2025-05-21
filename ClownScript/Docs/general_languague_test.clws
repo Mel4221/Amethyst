@@ -1,0 +1,61 @@
+// PRIMITIVE TYPES (all explicit forms)
+bool flag1 = true            // explicit bool
+set flag2 = bool(false)      // constructed bool
+byte count1 = 255            // explicit byte  
+set count2 = byte(255)       // constructed byte
+int age1 = 25                // explicit int
+set age2 = int(25)           // constructed int
+char initial1 = 'A'          // explicit char
+set initial2 = char('B')     // constructed char
+string name1 = "Alice"       // explicit string
+set name2 = string("Bob")    // constructed string
+long big_num1 = 99999999     // explicit long
+set big_num2 = long(99999999)// constructed long
+double pi1 = 3.14159         // explicit double
+set pi2 = double(3.14159)    // constructed double
+
+// SPECIAL TYPES
+any unknown1 = any()         // explicit any
+set unknown2 = any()         // constructed any
+set empty = null             // null (only form)
+void result = void           // void (only form)
+
+// COLLECTIONS (all forms)
+int[] numbers1 = [1,2,3]               // explicit typed array
+set numbers2 = int([1,2,3])            // constructed typed array
+any[] mixed1 = [1,"text",true]         // explicit mixed array
+set mixed2 = any([1,"text",true])      // constructed mixed array
+
+// CONSTANTS (all forms)
+const MAX_USERS = 100     // explicit typed const
+const MAX_ITEMS = 50      // inferred const (int)
+const SECRET = "abc123"// explicit string const
+const DEBUG = false      // explicit bool const
+
+// OBJECT TYPES
+class Person {}               // class definition
+Person user1 = Person()       // explicit class instance
+set user2 = Person()          // inferred class instance
+
+// FUNCTION TYPES
+function callback1 = -> print("Hi")  // explicit function
+set callback2 = -> print("Hello")    // inferred function
+
+int sum -> int a, int b
+return a+b
+
+print_message -> msg
+    print(msg)
+end
+
+
+
+
+// ALTERNATIVE DECLARATION STYLES
+// Type-first style
+int counter = 0
+string greeting = "Hello"
+
+// Keyword-first style  
+set counter = int(0)
+const greeting = string("Hi")

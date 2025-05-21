@@ -1,0 +1,132 @@
+/*
+  Redefinition of the porpuse (Since the very begining i was thinking to create a languague for the clownshell tool but the thing is that then when i thought on creatting a programing languague i went very far into how it would behave and look like which got really fast from the point i actually inteded at first ) of the clownscript programing language 
+  so along the time of rethink of development of the languague i have refined the porpuse
+  of the languague , since when i started thinking about the development of this languague was always to be a bash replacement but i really did not know how to go about that 
+  and i think that the best way to have sort of a mix of both ideas of languague that is an scripting with an object oriented paradiem but also a way to allow system level calls with no friction to allow system managment easier and allow interoperativilities between both 
+  
+  
+  So what is new in this new idea , well i want to redefine a bit the consept of what makes this laguague more similar to bash than to any other programing languague for example: 
+  
+  
+  1. In line environment calls 
+  2. In line environment calls with returns 
+  3. In line environment calls with awaited (is not really async more like a wait until it exist)
+  4. @ Simbol for exhange of variables 
+
+The rest stays pretty much the same with the only exeptions that cross environment variables will require the @VARIABLE_NAME to interop or exchange the variable values along the sistems and the reduction of the var and let to a single keywork as set for variable dynamic type declaration and function declarations
+
+*/
+
+
+/*
+  Multy line comments
+*/
+
+// single line comment 
+
+#some_random_flag // not even properly thougth throuh
+#some_raomdm_complier_method() // same here 
+
+// PRIMITIVE TYPES (all explicit forms)
+bool flag1 = true            // explicit bool
+set flag2 = bool(false)      // constructed bool
+byte count1 = 255            // explicit byte  
+set count2 = byte(255)       // constructed byte
+int age1 = 25                // explicit int
+set age2 = int(25)           // constructed int
+char initial1 = 'A'          // explicit char
+set initial2 = char('B')     // constructed char
+string name1 = "Alice"       // explicit string
+set name2 = string("Bob")    // constructed string
+long big_num1 = 99999999     // explicit long
+set big_num2 = long(99999999)// constructed long
+double pi1 = 3.14159         // explicit double
+set pi2 = double(3.14159)    // constructed double
+
+// Arithmetic operations 
+
+set a = 2 + 2 // 4
+set b = a * 2 // 8 
+set c = b - a // 4
+set d = c / 2 // 2
+set e = d ^ a // 16
+set f = a + b * c / d ^ 2
+
+// Logical Expressions 
+
+set is_true = true == true && true == true // true
+set is_not = true == false || false != false  // false 
+
+if(true == true && false == false)
+{
+  print(true)
+}
+
+
+// Loops 
+int index = 0
+
+while(index < 10)
+{
+  print(index)
+  index++
+}
+int[] list = [1,2,3,4,5]
+
+foreach(int item in list)
+{
+  print(item)
+}
+
+// Function with Retunrn type and argument 
+set int Sum(int[] numbers)
+{
+  int n = 0 
+  foreach(int number in numbers)
+  {
+    n = n+number
+  }
+}
+
+
+/*
+  By default all operations will block the main thread unless 
+  they are sent to a background thread 
+*/
+
+// interop with no return
+-> echo 'Interop without return type'
+
+// interop with return 
+set file_content => cat file.txt 
+
+// interop of variables 
+set some_value = "some random value" 
+-> echo @some_value
+
+
+print("Working...")
+
+// Array  
+bool[] flags = [true, false]               
+byte[] counts = [ 0, 255]   
+int[] ages = [ 25, int(32) ]                   
+char[] initials = [ 'A', char('B')]    
+string[] names = [ "Alice", string("Bob") ]
+long[] big_nums = [ 99999999L,long(99999999) ]
+double[] pis = [ 3.14159, double(3.14159) ]
+
+
+// Class 
+
+class Color{
+    pub byte[] RGB = [0,0,0]
+}
+class Box , Color
+{
+  pub set Draw() 
+  {
+    print(RGB)
+  } 
+}
+

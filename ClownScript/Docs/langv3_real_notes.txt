@@ -1,0 +1,161 @@
+/*
+  Redefinition of the porpuse (Since the very begining i was thinking to create a languague for the clownshell tool but the thing is that then when i thought on creatting a programing languague i went very far into how it would behave and look like which got really fast from the point i actually inteded at first ) of the clownscript programing language 
+  so along the time of rethink of development of the languague i have refined the porpuse
+  of the languague , since when i started thinking about the development of this languague was always to be a bash replacement but i really did not know how to go about that 
+  and i think that the best way to have sort of a mix of both ideas of languague that is an scripting with an object oriented paradiem but also a way to allow system level calls with no friction to allow system managment easier and allow interoperativilities between both 
+  
+  
+  So what is new in this new idea , well i want to redefine a bit the consept of what makes this laguague more similar to bash than to any other programing languague for example: 
+  
+  
+  1. In line environment calls 
+  2. In line environment calls with returns 
+  3. In line environment calls with awaited (is not really async more like a wait until it exist)
+  4. @ Simbol for exhange of variables 
+
+The rest stays pretty much the same with the only exeptions that cross environment variables will require the @VARIABLE_NAME to interop or exchange the variable values along the sistems and the reduction of the var and let to a single keywork as set for variable dynamic type declaration and function declarations
+
+*/
+  1. In line environment calls.
+  
+    Well as it names states all the text fallowed by the '->' will be executed as a sys_call entirelly for example 
+    
+    -> echo 'working...' 
+  it also fallows the idea of the line break witht the character '\' to sort of skip the line jump , but it is important to note that the command ends at the '\n' or line jump so any command will be run until there 
+  
+  2. In line environment calls with returns 
+  Let's say for whatever reason we don't want to use the build in ways of reading a file , which may not be the best example but it does the job , so the way someone could read a file would be with the cat command so in clownscript interups it would be like
+  
+  set content => cat file.txt # this is a valid bash comment 
+  so the set keyward as menchined above is used for variable declarations so we are declaring a variable that will hold the return output from the line executed on it's right 
+  
+  so to wrap up we use the '->' when it is a void action that we don't want to use a return from it and when we need the return of the execution we use '=>' 
+  
+  *IMPORTANT*
+  it is important to terminate the command line with an enter since without it it will pass the entire thing it to the sys_call 
+  
+  3. In line environment calls with awaited (is not really async more like a wait until it exist)
+  
+  Some times we may want to ensure that we wait for the output of the current command 
+  before we continue to move foward so for that we have
+  
+  wait => wget https://bigFile.iso
+  
+  also if we need the result of that variable for some reason  we could just do the fallowing 
+  
+set result => wget https://bigFile.iso) # auto awaited since result needs its value
+  
+  
+  4. @ Simbol for exhange of variables 
+  
+  well this is the simplest from the new changes since is simply to add and '@' to a VARIABLE_NAME and it would do the trick to pass the variable value to the system call for example 
+  
+  set file_name = "file.txt"
+  
+  set content => cat @file_name #so as expected the contnet of the file.txt will go to the variable content
+  print(content)
+  
+
+if(file("file.txt").exist())
+{
+    -> echo 'file is working' > file.txt
+}
+
+set file = "file.txt"
+string file_an
+set t()
+{
+
+}
+
+if(file(file).exist())
+{
+   wait => echo 'piping text to a file' > @file
+}
+
+var result => cat file.txt
+
+
+Primitive types and Declarations: 
+
+// PRIMITIVE TYPES (all explicit forms)
+bool flag1 = true            // explicit bool
+set flag2 = bool(false)      // constructed bool
+byte count1 = 255            // explicit byte  
+set count2 = byte(255)       // constructed byte
+int age1 = 25                // explicit int
+set age2 = int(25)           // constructed int
+char initial1 = 'A'          // explicit char
+set initial2 = char('B')     // constructed char
+string name1 = "Alice"       // explicit string
+set name2 = string("Bob")    // constructed string
+long big_num1 = 99999999     // explicit long
+set big_num2 = long(99999999)// constructed long
+double pi1 = 3.14159         // explicit double
+set pi2 = double(3.14159)    // constructed double
+
+const type = CONSTANT_VALUE
+
+Object oriented Programing
+
+class and objects: in principle they both behave the same way in clownscript  
+
+properties: are private by default
+constructors: require the same name of the class 
+
+
+
+
+class Color {
+  pub int[] RGB = [0,0,0] 
+}
+class Vehicle
+{
+  pub int doors = 5
+  pub int wheels = 4 
+  Vehicle() 
+  {
+    // constructor 
+  }
+}
+// multiple inerence allowed 
+class Car : Vehicle , Color
+{
+  pub set run()
+  {
+    print("Car is running...")
+  }
+}
+
+
+
+
+
+indexing 
+
+so far i have describe a few arrays but nor really talk abou the indexing methods
+or ways to index , so far is with: type[x] // if value is not to the size of it an exeption would be thorow 
+
+before i had the idea to make it losely typed but due to how much time lets forget about the type any for now 
+
+
+so far we only have the concrete types defined at the top  , and also the const keyword to define constants 
+
+memory managment so far everything manual  and some automatic free during the lexer process 
+
+
+methods with defined return types: 
+
+set int sum(int[] numbers)
+{
+  int n = 0 
+  for(int number in numbers)
+  {
+      n = n+number
+  }
+  return n // n will return a pointer to where n is located but that is for later development 
+}
+
+
+
+
